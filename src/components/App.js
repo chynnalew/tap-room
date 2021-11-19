@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './Header';
-import NavBar from './NavBar';
+import TapControl from './TapControl';
 
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-      <NavBar />
+      <TapControl />
     </React.Fragment>
   );
 }
