@@ -2,18 +2,19 @@ import AddTap from './AddTap';
 import NavBar from './NavBar';
 import React from 'react';
 import TapList from './TapList';
+import TapDetails from './TapDetails'
 
 class TapControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      tapListVisible: false,
-      addTapVisible: true,
+      tapListVisible: true,
+      addTapVisible: false,
       tapDetailsVisible: false,
       updateTapVisible: false,
       aboutVisible: false,
-      
+      selectedTap: [],
       tapList: [
         {
           name: 'Basic Beer',
@@ -67,13 +68,35 @@ class TapControl extends React.Component {
     });
   }
 
+  handleViewTapClick = (id) => {
+    const selectedTap = this.state.tapList.filter(tap => tap.id === id)[0];
+    this.setState({
+      selectedTap: selectedTap,
+      tapListVisible: false,
+      addTapVisible: false,
+      tapDetailsVisible: true,
+      updateTapVisible: false,
+      aboutVisible: false,
+    })
+  }
+
   render() {
     let currentlyVisibleState = null;
     if (this.state.tapListVisible) {
-      currentlyVisibleState = <TapList tapList={this.state.tapList}/>
+      currentlyVisibleState =
+        <TapList
+          tapList={this.state.tapList}
+          onViewTapClick={this.handleViewTapClick}/>
     }
     if (this.state.addTapVisible) {
-      currentlyVisibleState = <AddTap onNewTapCreation={this.handleNewTapCreation}/>
+      currentlyVisibleState =
+        <AddTap
+          onNewTapCreation={this.handleNewTapCreation} />
+    }
+    if (this.state.tapDetailsVisible) {
+      currentlyVisibleState =
+        <TapDetails
+          tap={this.state.selectedTap}/>
     }
 
     const controlStyle = {
@@ -86,7 +109,7 @@ class TapControl extends React.Component {
     return (
       <React.Fragment>
         <NavBar />
-        <div style = { controlStyle } >
+        <div style={controlStyle} >
           {currentlyVisibleState}
         </div>
       </React.Fragment>

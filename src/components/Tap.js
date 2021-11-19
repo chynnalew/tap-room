@@ -10,6 +10,13 @@ function Tap(props) {
     border: '1px grey solid',
     float: 'left'
   }
+  const buttonStyle = {
+    backgroundColor: 'black',
+    border: 'white 1px dashed',
+    color: 'white',
+    padding: '10px',
+    margin: '3px'
+  }
 
   if (props.quantity === 0) {
     return (
@@ -20,7 +27,8 @@ function Tap(props) {
           <p>ABV: {props.abv}%</p>
           <p>Price: $ {props.price}</p>
           <p>Quantity: {props.quantity}</p>
-          <button>View Details</button>
+          <button style={buttonStyle}>View Details</button>
+          <button style={buttonStyle}>Sold Out</button>
         </div>
       </React.Fragment>
     )
@@ -34,8 +42,8 @@ function Tap(props) {
         <p>ABV: {props.abv}%</p>
         <p>Price: $ {props.price}</p>
         <p>Quantity: {props.quantity}</p>
-        <button>View Details</button>
-        <button>Sell a Pint</button>
+        <button style={buttonStyle} onClick={()=> props.whenViewTapClicked(props.id)}>View Details</button>
+        <button style={buttonStyle}>Sell a Pint</button>
       </div>
     </React.Fragment>
   )
@@ -49,6 +57,7 @@ Tap.propTypes = {
   description: PropTypes.string,
   quantity: PropTypes.number,
   id: PropTypes.string,
+  whenViewTapClicked: PropTypes.func
 }
 
 export default Tap;
