@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/index.css';
+import PropTypes from 'prop-types';
 
 function NavBar(props) {
 
@@ -34,12 +35,18 @@ function NavBar(props) {
   return (
     <div style={navBarStyle}>
       <div style={buttonWrapStyle}>
-        <button style={buttonStyle} class='buttons'>All Kegs</button>
-        <button style={buttonStyle} class='buttons'>Add a Keg</button>
-        <button style={buttonStyle} class='buttons'>About Us</button>
+        <button style={buttonStyle} class='buttons' onClick={()=> props.onAllKegsClick()}>All Kegs</button>
+        <button style={buttonStyle} class='buttons' onClick={()=> props.onAddAKegClick()}>Add a Keg</button>
+        <button style={buttonStyle} class='buttons' onClick={()=> props.onAboutUsClick()}>About Us</button>
       </div>
     </div>
   )
+}
+
+NavBar.propTypes = {
+  onAllKegsClick: PropTypes.func,
+  onAddKegClick: PropTypes.func,
+  onAboutUsClick: PropTypes.func
 }
 
 export default NavBar;

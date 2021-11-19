@@ -20,18 +20,19 @@ function TapDetails(props) {
     fontWeight: 'bold'
   }
 
-  if (props.quantity === 0) {
+  if (props.tap.quantity === 0) {
     return (
       <React.Fragment>
         <div style={tapCardStyle}>
           <h1>{props.tap.name}</h1>
-          <p>{props.description}</p>
-          <p style={bold}>Brand: {props.brand}</p>
-          <p style={bold}>ABV: {props.abv}%</p>
-          <p style={bold}>Price: ${props.price}</p>
-          <p>Pints Available: {props.quantity}</p>
+          <p>{props.tap.description}</p>
+          <p style={bold}>Brand: {props.tap.brand}</p>
+          <p style={bold}>ABV: {props.tap.abv}%</p>
+          <p style={bold}>Price: ${props.tap.price}</p>
+          <p>Pints Available: SOLD OUT</p>
           <button style={buttonStyle}>Update</button>
           <button style={buttonStyle}>Sold Out</button>
+          <button style={buttonStyle} onClick={() => props.onAddPintClick(props.tap.id)}>Add a Pint</button>
           <button style={buttonStyle}>Delete Keg</button>
         </div>
       </React.Fragment>
@@ -48,7 +49,8 @@ function TapDetails(props) {
         <p style={bold}>Price: ${props.tap.price}</p>
         <p>Pints Available: {props.tap.quantity}</p>
         <button style={buttonStyle}>Update</button>
-        <button style={buttonStyle}>Sell a Pint</button>
+        <button style={buttonStyle} onClick={()=>props.onSellPintViewClick(props.tap.id)}>Sell a Pint</button>
+        <button style={buttonStyle} onClick={()=>props.onAddPintClick(props.tap.id)}>Add a Pint</button>
         <button style={buttonStyle}>Delete Keg</button>
       </div>
     </React.Fragment>
@@ -56,7 +58,10 @@ function TapDetails(props) {
 }
 
 TapDetails.propTypes = {
-  tap: PropTypes.object
+  tap: PropTypes.object,
+  onAddPintClick: PropTypes.func,
+  onSellPintViewClick: PropTypes.func,
+  onAddPintClick: PropTypes.func
 }
 
 export default TapDetails;

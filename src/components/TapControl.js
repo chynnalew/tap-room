@@ -22,7 +22,7 @@ class TapControl extends React.Component {
           price: 2,
           abv: 4,
           description: 'A run of the mill basic beer. It\'s probably warm and flat, but it\'s cheap!',
-          quantity: 124,
+          quantity: 4,
           id: "1tap"
         },
         {
@@ -56,6 +56,33 @@ class TapControl extends React.Component {
     }
   }
 
+  handleAllKegsClick = () => {
+    this.setState({
+      tapListVisible: true,
+      addTapVisible: false,
+      tapDetailsVisible: false,
+      updateTapVisible: false,
+      aboutVisible: false,
+    })
+  }
+  handleAddAKegClick = () => {
+    this.setState({
+      tapListVisible: false,
+      addTapVisible: true,
+      tapDetailsVisible: false,
+      updateTapVisible: false,
+      aboutVisible: false,
+    })
+  }
+  handleAboutUsClick = () => {
+    this.setState({
+      tapListVisible: false,
+      addTapVisible: false,
+      tapDetailsVisible: false,
+      updateTapVisible: false,
+      aboutVisible: true,
+    })
+  }
   handleNewTapCreation = (newTap) => {
     const newTapList = this.state.tapList.concat(newTap);
     this.setState({
@@ -79,6 +106,36 @@ class TapControl extends React.Component {
       aboutVisible: false,
     })
   }
+  handleSellPintClick = (id) => {
+    this.state.tapList.filter(tap => tap.id === id)[0].quantity--;
+    this.setState({
+      tapListVisible: true,
+      addTapVisible: false,
+      tapDetailsVisible: false,
+      updateTapVisible: false,
+      aboutVisible: false,
+    })
+  }
+  handleSellPintViewClick = (id) => {
+    this.state.tapList.filter(tap => tap.id === id)[0].quantity--;
+    this.setState({
+      tapListVisible: false,
+      addTapVisible: false,
+      tapDetailsVisible: true,
+      updateTapVisible: false,
+      aboutVisible: false,
+    })
+  }
+  handleAddPintClick = (id) => {
+    this.state.tapList.filter(tap => tap.id === id)[0].quantity++;
+    this.setState({
+      tapListVisible: false,
+      addTapVisible: false,
+      tapDetailsVisible: true,
+      updateTapVisible: false,
+      aboutVisible: false,
+    })
+  }
 
   render() {
     let currentlyVisibleState = null;
@@ -86,7 +143,8 @@ class TapControl extends React.Component {
       currentlyVisibleState =
         <TapList
           tapList={this.state.tapList}
-          onViewTapClick={this.handleViewTapClick}/>
+          onViewTapClick={this.handleViewTapClick}
+          onSellPintClick={this.handleSellPintClick}/>
     }
     if (this.state.addTapVisible) {
       currentlyVisibleState =
@@ -96,7 +154,9 @@ class TapControl extends React.Component {
     if (this.state.tapDetailsVisible) {
       currentlyVisibleState =
         <TapDetails
-          tap={this.state.selectedTap}/>
+          tap={this.state.selectedTap}
+          onSellPintViewClick={this.handleSellPintViewClick}
+          onAddPintClick={this.handleAddPintClick}/>
     }
 
     const controlStyle = {
@@ -108,7 +168,10 @@ class TapControl extends React.Component {
 
     return (
       <React.Fragment>
-        <NavBar />
+        <NavBar
+          onAllKegsClick={this.handleAllKegsClick}
+          onAddAKegClick={this.handleAddAKegClick}
+          onAboutUsClick={this.handleAboutUsClick}/>
         <div style={controlStyle} >
           {currentlyVisibleState}
         </div>

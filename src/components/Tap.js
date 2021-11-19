@@ -25,9 +25,9 @@ function Tap(props) {
           <h1>{props.name}</h1>
           <p>Brand: {props.brand}</p>
           <p>ABV: {props.abv}%</p>
-          <p>Price: $ {props.price}</p>
+          <p>Price: ${props.price}</p>
           <p>Quantity: {props.quantity}</p>
-          <button style={buttonStyle}>View Details</button>
+          <button style={buttonStyle} onClick={()=> props.whenViewTapClicked(props.id)}>View Details</button>
           <button style={buttonStyle}>Sold Out</button>
         </div>
       </React.Fragment>
@@ -40,10 +40,10 @@ function Tap(props) {
         <h1>{props.name}</h1>
         <p>Brand: {props.brand}</p>
         <p>ABV: {props.abv}%</p>
-        <p>Price: $ {props.price}</p>
+        <p>Price: ${props.price}</p>
         <p>Quantity: {props.quantity}</p>
         <button style={buttonStyle} onClick={()=> props.whenViewTapClicked(props.id)}>View Details</button>
-        <button style={buttonStyle}>Sell a Pint</button>
+        <button style={buttonStyle} onClick={() => props.whenSellPintClicked(props.id)}>Sell a Pint</button>
       </div>
     </React.Fragment>
   )
@@ -57,7 +57,8 @@ Tap.propTypes = {
   description: PropTypes.string,
   quantity: PropTypes.number,
   id: PropTypes.string,
-  whenViewTapClicked: PropTypes.func
+  whenViewTapClicked: PropTypes.func,
+  whenSellPintClicked: PropTypes.func,
 }
 
 export default Tap;
