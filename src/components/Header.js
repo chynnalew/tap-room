@@ -3,7 +3,7 @@ import React from 'react';
 function Header() {
 
   const headerStyle = {
-    width: '99%',
+    width: '100%',
     height: '80px',
     fontFamily: 'Monaco',
     backgroundColor: 'green',
