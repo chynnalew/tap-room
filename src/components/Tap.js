@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Tap(props) {
   const tapCardStyle = {
     width: '200px',
-    height: '250px',
+    height: '300px',
     padding: '10px',
     margin: '10px',
     border: '1px grey solid',
@@ -19,7 +19,7 @@ function Tap(props) {
           <p>Brand: {props.brand}</p>
           <p>ABV: {props.abv}%</p>
           <p>Price: $ {props.price}</p>
-          <p>Quantity: {props.count}</p>
+          <p>Quantity: {props.quantity}</p>
           <button>View Details</button>
         </div>
       </React.Fragment>
@@ -33,7 +33,7 @@ function Tap(props) {
         <p>Brand: {props.brand}</p>
         <p>ABV: {props.abv}%</p>
         <p>Price: $ {props.price}</p>
-        <p>Quantity: {props.count}</p>
+        <p>Quantity: {props.quantity}</p>
         <button>View Details</button>
         <button>Sell a Pint</button>
       </div>
@@ -48,3 +48,5 @@ Tap.propTypes = {
   price: PropTypes.number,
   quantity: PropTypes.number
 }
+
+export default Tap;
