@@ -3,7 +3,8 @@ import AddTap from './AddTap';
 import NavBar from './NavBar';
 import React from 'react';
 import TapList from './TapList';
-import TapDetails from './TapDetails'
+import TapDetails from './TapDetails';
+import UpdateTap from './UpdateTap';
 
 class TapControl extends React.Component {
 
@@ -19,7 +20,7 @@ class TapControl extends React.Component {
       tapList: [
         {
           name: 'Basic Beer',
-          brand: 'GenAric',
+          brand: 'Generic',
           price: 2,
           abv: 4,
           description: 'A run of the mill basic beer. It\'s probably warm and flat, but it\'s cheap!',
@@ -137,6 +138,28 @@ class TapControl extends React.Component {
       aboutVisible: false,
     })
   }
+  handleUpdateClick = (id) => {
+    const selectedTap = this.state.tapList.filter(tap => tap.id === id)[0];
+    this.setState({
+      selectedTap: selectedTap,
+      tapListVisible: false,
+      addTapVisible: false,
+      tapDetailsVisible: false,
+      updateTapVisible: true,
+      aboutVisible: false,
+    })
+  }
+  handleUpdateTapFormSubmit = (tap) => {
+    const editedTapList = this.state.tapList.filter(tap => tap.id !== this.state.selectedTap.id).concat(tap);
+    this.setState({
+      tapList: editedTapList,
+      tapListVisible: true,
+      addTapVisible: false,
+      tapDetailsVisible: false,
+      updateTapVisible: false,
+      aboutVisible: false
+    });
+  }
 
   render() {
     let currentlyVisibleState = null;
@@ -145,22 +168,33 @@ class TapControl extends React.Component {
         <TapList
           tapList={this.state.tapList}
           onViewTapClick={this.handleViewTapClick}
-          onSellPintClick={this.handleSellPintClick}/>
+          onSellPintClick={this.handleSellPintClick}
+        />
     }
     if (this.state.addTapVisible) {
       currentlyVisibleState =
         <AddTap
-          onNewTapCreation={this.handleNewTapCreation} />
+          onNewTapCreation={this.handleNewTapCreation}
+        />
     }
     if (this.state.tapDetailsVisible) {
       currentlyVisibleState =
         <TapDetails
           tap={this.state.selectedTap}
           onSellPintViewClick={this.handleSellPintViewClick}
-          onAddPintClick={this.handleAddPintClick}/>
+          onAddPintClick={this.handleAddPintClick}
+          onUpdateClick={this.handleUpdateClick}
+        />
     }
     if (this.state.aboutVisible) {
       currentlyVisibleState = <AboutUs />
+    }
+    if (this.state.updateTapVisible) {
+      currentlyVisibleState =
+        <UpdateTap
+          tap={this.state.selectedTap}
+          onNewTapCreation={this.handleUpdateTapFormSubmit}
+        />
     }
 
     const controlStyle = {
