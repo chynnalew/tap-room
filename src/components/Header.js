@@ -5,7 +5,8 @@ function Header() {
   const headerStyle = {
     width: '100%',
     height: '80px',
-    backgroundColor: 'green',
+    backgroundColor: 'white',
+    color: 'black',
     position: 'fixed',
     paddingLeft: '20px'
   }

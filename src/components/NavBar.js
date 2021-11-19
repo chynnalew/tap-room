@@ -8,11 +8,12 @@ function NavBar(props) {
     width: '100px',
     position: 'fixed',
     marginTop: '80px',
-    backgroundColor: 'pink',
+    backgroundColor: 'black',
     paddingTop: '20px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    borderRight: '5px white solid'
   }
 
   const buttonWrapStyle = {
@@ -26,6 +27,8 @@ function NavBar(props) {
     textDecoration: 'none',
     background: 'transparent',
     border: 'none',
+    color: 'white',
+    fontSize: 'large'
   }
 
   return (
