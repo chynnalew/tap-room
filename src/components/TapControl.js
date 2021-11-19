@@ -1,5 +1,6 @@
-import React from 'react';
+import AddTap from './AddTap';
 import NavBar from './NavBar';
+import React from 'react';
 import TapList from './TapList';
 
 class TapControl extends React.Component {
@@ -7,8 +8,8 @@ class TapControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tapListVisible: true,
-      addTapVisible: false,
+      tapListVisible: false,
+      addTapVisible: true,
       tapDetailsVisible: false,
       updateTapVisible: false,
       aboutVisible: false,
@@ -50,10 +51,25 @@ class TapControl extends React.Component {
     }
   }
 
+  handleNewTapCreation = (newTap) => {
+    const newTapList = this.state.tapList.concat(newTap);
+    this.setState({
+      tapList: newTapList,
+      tapListVisible: true,
+      addTapVisible: false,
+      tapDetailsVisible: false,
+      updateTapVisible: false,
+      aboutVisible: false,
+    });
+  }
+
   render() {
     let currentlyVisibleState = null;
     if (this.state.tapListVisible) {
       currentlyVisibleState = <TapList tapList={this.state.tapList}/>
+    }
+    if (this.state.addTapVisible) {
+      currentlyVisibleState = <AddTap onNewTapCreation={this.handleNewTapCreation}/>
     }
 
     const controlStyle = {
