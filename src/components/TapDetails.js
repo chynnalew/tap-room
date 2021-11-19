@@ -41,7 +41,7 @@ function TapDetails(props) {
           <button class='hover' style={buttonStyle} onClick={() => props.onUpdateClick(props.tap.id)}>Update</button>
           <button style={soldOutButtonStyle}>Sold Out</button>
           <button class='hover' style={buttonStyle} onClick={() => props.onAddPintClick(props.tap.id)}>Add a Pint</button> <br/><br/>
-          <button class='hover' style={buttonStyle}>Delete Keg</button>
+          <button class='hover' style={buttonStyle} onClick={() => props.onDeleteClick(props.tap.id)}>Delete Keg</button>
         </div>
       </React.Fragment>
     )
@@ -59,7 +59,7 @@ function TapDetails(props) {
         <button class='hover' style={buttonStyle} onClick={() => props.onUpdateClick(props.tap.id)}>Update</button>
         <button class='hover' style={buttonStyle} onClick={() => props.onSellPintViewClick(props.tap.id)}>Sell a Pint</button>
         <button class='hover' style={buttonStyle} onClick={() => props.onAddPintClick(props.tap.id)}>Add a Pint</button> <br/><br/>
-        <button class='hover' style={buttonStyle}>Delete Keg</button>
+        <button class='hover' style={buttonStyle} onClick={() => props.onDeleteClick(props.tap.id)}>Delete Keg</button>
       </div>
     </React.Fragment>
   )
@@ -70,7 +70,8 @@ TapDetails.propTypes = {
   onAddPintClick: PropTypes.func,
   onSellPintViewClick: PropTypes.func,
   onAddPintClick: PropTypes.func,
-  onUpdateClick: PropTypes.func
+  onUpdateClick: PropTypes.func,
+  onDeleteClick: PropTypes.func
 }
 
 export default TapDetails;

@@ -160,6 +160,17 @@ class TapControl extends React.Component {
       aboutVisible: false
     });
   }
+  handleDeleteClick = (id) => {
+    const editedTapList = this.state.tapList.filter(tap => tap.id != this.state.selectedTap.id);
+    this.setState({
+      tapList: editedTapList,
+      tapListVisible: true,
+      addTapVisible: false,
+      tapDetailsVisible: false,
+      updateTapVisible: false,
+      aboutVisible: false
+    });
+  }
 
   render() {
     let currentlyVisibleState = null;
@@ -184,6 +195,7 @@ class TapControl extends React.Component {
           onSellPintViewClick={this.handleSellPintViewClick}
           onAddPintClick={this.handleAddPintClick}
           onUpdateClick={this.handleUpdateClick}
+          onDeleteClick={this.handleDeleteClick}
         />
     }
     if (this.state.aboutVisible) {

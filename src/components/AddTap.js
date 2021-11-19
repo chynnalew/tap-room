@@ -41,18 +41,21 @@ function AddTap(props) {
       <div style={formStyle}>
         <h1>Add a Keg</h1>
         <form onSubmit={handleNewTapForm}>
+          <label>Name</label>
           <input
             style={inputStyle}
             type="text"
             name="name"
             placeholder="Beverage Name" />
           <br />
+          <label>Beverage Brand</label>
           <input
             style={inputStyle}
             type="text"
             name="brand"
             placeholder="Beverage Brand" />
           <br />
+          <label>Price per Pint</label>
           <input
             style={inputStyle}
             type="number"
@@ -60,6 +63,7 @@ function AddTap(props) {
             placeholder="Price per Pint"
             min="1" />
           <br />
+          <label>ABV%</label>
           <input
             style={inputStyle}
             type="number"
@@ -67,17 +71,20 @@ function AddTap(props) {
             placeholder="ABV%"
             min="1" />
           <br />
+          <label>Description</label>
           <textarea
             style={inputStyle}
             name="description"
             placeholder="Description" />
           <br />
+          <label>Pints in Keg</label>
           <input
             style={inputStyle}
             type="number"
             name="quantity"
             placeholder="Current Pints Available (full Keg = 124 pints)"
-            min="0" />
+            min="0"
+            defaultValue='124'/>
           <br />
           <button class='hover' style={buttonStyle} type="submit">Add Keg</button>
         </form>
