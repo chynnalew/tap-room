@@ -22,6 +22,9 @@ This application was created to show understanding of building single page web a
     - As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
 
 ## Diagrams / Component Layout
+<img src='src/img/tap-room.jpg' alt='page plan'/>
+<br/>
+<img src='src/img/tap-room-components.jpg' alt='page plan'/>
 
 ## Setup/Installation Requirements
 
