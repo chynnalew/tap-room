@@ -5,15 +5,14 @@ function Header() {
   const headerStyle = {
     width: '100%',
     height: '80px',
-    fontFamily: 'Monaco',
     backgroundColor: 'green',
     position: 'fixed',
-    textAlign: 'center'
+    paddingLeft: '20px'
   }
 
   return (
     <div style={headerStyle}>
-      <h1>Tap Room</h1>
+      <h1>Track that Tap</h1>
     </div>
   )
 }

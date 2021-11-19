@@ -1,8 +1,15 @@
 import React from 'react';
 
 function TapList(props) {
+
+  const tapListStyle = {
+    textAlign: 'center',
+  }
+
   return (
-    'hello'
+    <div style={tapListStyle}>
+      <h1>Current Tap List</h1>
+    </div>
   )
 }
 
