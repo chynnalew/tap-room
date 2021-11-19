@@ -36,9 +36,9 @@ function TapDetails(props) {
           <p>{props.tap.description}</p>
           <p style={bold}>Brand: {props.tap.brand}</p>
           <p style={bold}>ABV: {props.tap.abv}%</p>
-          <p style={bold}>Price: ${props.tap.price}</p>
+          <p style={bold}>Price: $ {props.tap.price}</p>
           <p>Pints Available: SOLD OUT</p>
-          <button class='hover' style={buttonStyle}>Update</button>
+          <button class='hover' style={buttonStyle} onClick={() => props.onUpdateClick(props.tap.id)}>Update</button>
           <button style={soldOutButtonStyle}>Sold Out</button>
           <button class='hover' style={buttonStyle} onClick={() => props.onAddPintClick(props.tap.id)}>Add a Pint</button> <br/><br/>
           <button class='hover' style={buttonStyle}>Delete Keg</button>
@@ -54,7 +54,7 @@ function TapDetails(props) {
         <p>{props.tap.description}</p>
         <p style={bold}>Brand: {props.tap.brand}</p>
         <p style={bold}>ABV: {props.tap.abv}%</p>
-        <p style={bold}>Price: ${props.tap.price}</p>
+        <p style={bold}>Price: $ {props.tap.price}</p>
         <p>Pints Available: {props.tap.quantity}</p>
         <button class='hover' style={buttonStyle} onClick={() => props.onUpdateClick(props.tap.id)}>Update</button>
         <button class='hover' style={buttonStyle} onClick={() => props.onSellPintViewClick(props.tap.id)}>Sell a Pint</button>

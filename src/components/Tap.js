@@ -33,7 +33,7 @@ function Tap(props) {
           <h1>{props.name}</h1>
           <p>Brand: {props.brand}</p>
           <p>ABV: {props.abv}%</p>
-          <p>Price: ${props.price}</p>
+          <p>Price: $ {props.price}</p>
           <p>SOLD OUT</p>
           <button class='hover' style={buttonStyle} onClick={() => props.whenViewTapClicked(props.id)}>View Details</button>
           <button style={soldOutButtonStyle}>Sold Out</button>
@@ -48,7 +48,7 @@ function Tap(props) {
         <h1>{props.name}</h1>
         <p>Brand: {props.brand}</p>
         <p>ABV: {props.abv}%</p>
-        <p>Price: ${props.price}</p>
+        <p>Price: $ {props.price}</p>
         <p>Pints Available: {props.quantity}</p>
         <button class='hover' style={buttonStyle} onClick={() => props.whenViewTapClicked(props.id)}>View Details</button>
         <button class='hover' style={buttonStyle} onClick={() => props.whenSellPintClicked(props.id)}>Sell a Pint</button>

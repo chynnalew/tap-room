@@ -37,7 +37,7 @@ function NavBar(props) {
       <div style={buttonWrapStyle}>
         <button style={buttonStyle} class='buttons' onClick={() => props.onAllKegsClick()}>All Kegs</button>
         <button style={buttonStyle} class='buttons' onClick={() => props.onAddAKegClick()}>Add a Keg</button>
-        <button style={buttonStyle} class='buttons' onClick={() => props.onAboutUsClick()}>About Us</button>
+        <button style={buttonStyle} class='buttons' onClick={() => props.onInstructionsClick()}>Instructions</button>
       </div>
     </div>
   )
@@ -46,7 +46,7 @@ function NavBar(props) {
 NavBar.propTypes = {
   onAllKegsClick: PropTypes.func,
   onAddKegClick: PropTypes.func,
-  onAboutUsClick: PropTypes.func
+  onInstructionsClick: PropTypes.func
 }
 
 export default NavBar;

@@ -1,4 +1,4 @@
-import AboutUs from './AboutUs';
+import Instructions from './Instructions';
 import AddTap from './AddTap';
 import NavBar from './NavBar';
 import React from 'react';
@@ -52,7 +52,7 @@ class TapControl extends React.Component {
           abv: 4,
           description: 'Did someone in the next room whisper the name of a fruit? That\'s what this tastes like. (It\'s literally just bubbly water.)',
           quantity: 0,
-          id: "1"
+          id: "hi6"
         }
       ]
     }
@@ -76,7 +76,7 @@ class TapControl extends React.Component {
       aboutVisible: false,
     })
   }
-  handleAboutUsClick = () => {
+  handleInstructionsClick = () => {
     this.setState({
       tapListVisible: false,
       addTapVisible: false,
@@ -187,7 +187,7 @@ class TapControl extends React.Component {
         />
     }
     if (this.state.aboutVisible) {
-      currentlyVisibleState = <AboutUs />
+      currentlyVisibleState = <Instructions />
     }
     if (this.state.updateTapVisible) {
       currentlyVisibleState =
@@ -209,7 +209,7 @@ class TapControl extends React.Component {
         <NavBar
           onAllKegsClick={this.handleAllKegsClick}
           onAddAKegClick={this.handleAddAKegClick}
-          onAboutUsClick={this.handleAboutUsClick}/>
+          onInstructionsClick={this.handleInstructionsClick} />
         <div style={controlStyle} >
           {currentlyVisibleState}
         </div>
