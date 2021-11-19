@@ -46,7 +46,9 @@ Tap.propTypes = {
   brand: PropTypes.string,
   abv: PropTypes.number,
   price: PropTypes.number,
-  quantity: PropTypes.number
+  description: PropTypes.string,
+  quantity: PropTypes.number,
+  id: PropTypes.string,
 }
 
 export default Tap;

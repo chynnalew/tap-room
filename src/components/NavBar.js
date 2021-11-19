@@ -34,8 +34,8 @@ function NavBar(props) {
   return (
     <div style={navBarStyle}>
       <div style={buttonWrapStyle}>
-        <button style={buttonStyle} class='buttons'>All Taps</button>
-        <button style={buttonStyle} class='buttons'>Add a Tap</button>
+        <button style={buttonStyle} class='buttons'>All Kegs</button>
+        <button style={buttonStyle} class='buttons'>Add a Keg</button>
         <button style={buttonStyle} class='buttons'>About Us</button>
       </div>
     </div>
