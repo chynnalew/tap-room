@@ -1,8 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import '../css/index.css';
 
 function TapDetails(props) {
-  
+
   const tapCardStyle = {
     width: '60%',
     padding: '10px',
@@ -19,6 +20,13 @@ function TapDetails(props) {
   const bold = {
     fontWeight: 'bold'
   }
+  const soldOutButtonStyle = {
+    backgroundColor: 'black',
+    border: 'white 1px dashed',
+    color: 'red',
+    padding: '10px',
+    margin: '3px'
+  }
 
   if (props.tap.quantity === 0) {
     return (
@@ -30,10 +38,10 @@ function TapDetails(props) {
           <p style={bold}>ABV: {props.tap.abv}%</p>
           <p style={bold}>Price: ${props.tap.price}</p>
           <p>Pints Available: SOLD OUT</p>
-          <button style={buttonStyle}>Update</button>
-          <button style={buttonStyle}>Sold Out</button>
-          <button style={buttonStyle} onClick={() => props.onAddPintClick(props.tap.id)}>Add a Pint</button>
-          <button style={buttonStyle}>Delete Keg</button>
+          <button class='hover' style={buttonStyle}>Update</button>
+          <button style={soldOutButtonStyle}>Sold Out</button>
+          <button class='hover' style={buttonStyle} onClick={() => props.onAddPintClick(props.tap.id)}>Add a Pint</button> <br/><br/>
+          <button class='hover' style={buttonStyle}>Delete Keg</button>
         </div>
       </React.Fragment>
     )
@@ -48,10 +56,10 @@ function TapDetails(props) {
         <p style={bold}>ABV: {props.tap.abv}%</p>
         <p style={bold}>Price: ${props.tap.price}</p>
         <p>Pints Available: {props.tap.quantity}</p>
-        <button style={buttonStyle}>Update</button>
-        <button style={buttonStyle} onClick={()=>props.onSellPintViewClick(props.tap.id)}>Sell a Pint</button>
-        <button style={buttonStyle} onClick={()=>props.onAddPintClick(props.tap.id)}>Add a Pint</button>
-        <button style={buttonStyle}>Delete Keg</button>
+        <button class='hover' style={buttonStyle}>Update</button>
+        <button class='hover' style={buttonStyle} onClick={() => props.onSellPintViewClick(props.tap.id)}>Sell a Pint</button>
+        <button class='hover' style={buttonStyle} onClick={() => props.onAddPintClick(props.tap.id)}>Add a Pint</button> <br/><br/>
+        <button class='hover' style={buttonStyle}>Delete Keg</button>
       </div>
     </React.Fragment>
   )

@@ -6,7 +6,7 @@ function NavBar(props) {
 
   const navBarStyle = {
     height: '100%',
-    width: '100px',
+    width: '150px',
     position: 'fixed',
     marginTop: '80px',
     backgroundColor: 'black',
@@ -35,9 +35,9 @@ function NavBar(props) {
   return (
     <div style={navBarStyle}>
       <div style={buttonWrapStyle}>
-        <button style={buttonStyle} class='buttons' onClick={()=> props.onAllKegsClick()}>All Kegs</button>
-        <button style={buttonStyle} class='buttons' onClick={()=> props.onAddAKegClick()}>Add a Keg</button>
-        <button style={buttonStyle} class='buttons' onClick={()=> props.onAboutUsClick()}>About Us</button>
+        <button style={buttonStyle} class='buttons' onClick={() => props.onAllKegsClick()}>All Kegs</button>
+        <button style={buttonStyle} class='buttons' onClick={() => props.onAddAKegClick()}>Add a Keg</button>
+        <button style={buttonStyle} class='buttons' onClick={() => props.onAboutUsClick()}>About Us</button>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import '../css/index.css';
 
 function Tap(props) {
   const tapCardStyle = {
@@ -17,6 +18,13 @@ function Tap(props) {
     padding: '10px',
     margin: '3px'
   }
+  const soldOutButtonStyle = {
+    backgroundColor: 'black',
+    border: 'white 1px dashed',
+    color: 'red',
+    padding: '10px',
+    margin: '3px'
+  }
 
   if (props.quantity === 0) {
     return (
@@ -26,9 +34,9 @@ function Tap(props) {
           <p>Brand: {props.brand}</p>
           <p>ABV: {props.abv}%</p>
           <p>Price: ${props.price}</p>
-          <p>Quantity: {props.quantity}</p>
-          <button style={buttonStyle} onClick={()=> props.whenViewTapClicked(props.id)}>View Details</button>
-          <button style={buttonStyle}>Sold Out</button>
+          <p>SOLD OUT</p>
+          <button class='hover' style={buttonStyle} onClick={() => props.whenViewTapClicked(props.id)}>View Details</button>
+          <button style={soldOutButtonStyle}>Sold Out</button>
         </div>
       </React.Fragment>
     )
@@ -41,9 +49,9 @@ function Tap(props) {
         <p>Brand: {props.brand}</p>
         <p>ABV: {props.abv}%</p>
         <p>Price: ${props.price}</p>
-        <p>Quantity: {props.quantity}</p>
-        <button style={buttonStyle} onClick={()=> props.whenViewTapClicked(props.id)}>View Details</button>
-        <button style={buttonStyle} onClick={() => props.whenSellPintClicked(props.id)}>Sell a Pint</button>
+        <p>Pints Available: {props.quantity}</p>
+        <button class='hover' style={buttonStyle} onClick={() => props.whenViewTapClicked(props.id)}>View Details</button>
+        <button class='hover' style={buttonStyle} onClick={() => props.whenSellPintClicked(props.id)}>Sell a Pint</button>
       </div>
     </React.Fragment>
   )

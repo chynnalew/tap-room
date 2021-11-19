@@ -1,3 +1,4 @@
+import AboutUs from './AboutUs';
 import AddTap from './AddTap';
 import NavBar from './NavBar';
 import React from 'react';
@@ -22,7 +23,7 @@ class TapControl extends React.Component {
           price: 2,
           abv: 4,
           description: 'A run of the mill basic beer. It\'s probably warm and flat, but it\'s cheap!',
-          quantity: 4,
+          quantity: 75,
           id: "1tap"
         },
         {
@@ -31,7 +32,7 @@ class TapControl extends React.Component {
           price: 10,
           abv: 7,
           description: 'It smells like pine trees and tastes like them too',
-          quantity: 124,
+          quantity: 5,
           id: "hello"
         },
         {
@@ -49,7 +50,7 @@ class TapControl extends React.Component {
           price: 5,
           abv: 4,
           description: 'Did someone in the next room whisper the name of a fruit? That\'s what this tastes like. (It\'s literally just bubbly water.)',
-          quantity: 124,
+          quantity: 0,
           id: "1"
         }
       ]
@@ -158,9 +159,12 @@ class TapControl extends React.Component {
           onSellPintViewClick={this.handleSellPintViewClick}
           onAddPintClick={this.handleAddPintClick}/>
     }
+    if (this.state.aboutVisible) {
+      currentlyVisibleState = <AboutUs />
+    }
 
     const controlStyle = {
-      width: 'calc(100% - 150px)',
+      width: 'calc(100% - 200px)',
       marginTop: '90px',
       marginLeft: '100px',
       float: 'right',
