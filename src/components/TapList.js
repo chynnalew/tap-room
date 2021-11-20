@@ -1,6 +1,7 @@
 import React from 'react';
 import Tap from './Tap';
 import PropTypes from 'prop-types';
+import '../css/index.css'
 
 function TapList(props) {
 
@@ -10,7 +11,7 @@ function TapList(props) {
 
   return (
     <div style={tapListStyle}>
-      <h1>Current Tap List</h1>
+      <h1 class='titleText'>Current Tap List</h1>
       {props.tapList.map((tap) =>
         <Tap
           whenViewTapClicked={props.onViewTapClick}

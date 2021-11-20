@@ -9,7 +9,8 @@ function Tap(props) {
     padding: '10px',
     margin: '10px',
     border: '1px grey solid',
-    float: 'left'
+    float: 'left',
+    boxShadow: '7px 7px 0px lightgrey',
   }
   const buttonStyle = {
     backgroundColor: 'black',
@@ -30,7 +31,7 @@ function Tap(props) {
     return (
       <React.Fragment>
         <div style={tapCardStyle}>
-          <h1>{props.name}</h1>
+          <h3>{props.name}</h3>
           <p>Brand: {props.brand}</p>
           <p>ABV: {props.abv}%</p>
           <p>Price: $ {props.price}</p>
@@ -45,7 +46,7 @@ function Tap(props) {
   return (
     <React.Fragment>
       <div style={tapCardStyle}>
-        <h1>{props.name}</h1>
+        <h3>{props.name}</h3>
         <p>Brand: {props.brand}</p>
         <p>ABV: {props.abv}%</p>
         <p>Price: $ {props.price}</p>

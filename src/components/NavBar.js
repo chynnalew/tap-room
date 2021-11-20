@@ -29,7 +29,9 @@ function NavBar(props) {
     background: 'transparent',
     border: 'none',
     color: 'white',
-    fontSize: 'large'
+    fontSize: 'large',
+    fontWeight: 'bold',
+    fontFamily: 'Courier New, Courier, monospace'
   }
 
   return (
