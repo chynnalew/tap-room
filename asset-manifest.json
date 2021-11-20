@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tap-room/static/css/main.69f98cc4.chunk.css",
-    "main.js": "/tap-room/static/js/main.916b7f30.chunk.js",
-    "main.js.map": "/tap-room/static/js/main.916b7f30.chunk.js.map",
+    "main.js": "/tap-room/static/js/main.1dbfd6f7.chunk.js",
+    "main.js.map": "/tap-room/static/js/main.1dbfd6f7.chunk.js.map",
     "runtime-main.js": "/tap-room/static/js/runtime-main.69b8d50e.js",
     "runtime-main.js.map": "/tap-room/static/js/runtime-main.69b8d50e.js.map",
     "static/js/2.9745914b.chunk.js": "/tap-room/static/js/2.9745914b.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.69b8d50e.js",
     "static/js/2.9745914b.chunk.js",
     "static/css/main.69f98cc4.chunk.css",
-    "static/js/main.916b7f30.chunk.js"
+    "static/js/main.1dbfd6f7.chunk.js"
   ]
 }
