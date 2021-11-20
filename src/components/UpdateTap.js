@@ -42,6 +42,7 @@ function UpdateTap(props) {
         <h1>Update {props.tap.name} Keg</h1>
         <form onSubmit={handleUpdateTapForm}>
           <label>Name</label>
+          <br/>
           <input
             style={inputStyle}
             type="text"
@@ -51,6 +52,7 @@ function UpdateTap(props) {
             />
           <br />
           <label>Brand</label>
+          <br/>
           <input
             style={inputStyle}
             type="text"
@@ -59,6 +61,7 @@ function UpdateTap(props) {
             defaultValue={props.tap.brand}/>
           <br />
           <label>Price per Pint</label>
+          <br/>
           <input
             style={inputStyle}
             type="number"
@@ -68,6 +71,7 @@ function UpdateTap(props) {
             defaultValue={props.tap.price}/>
           <br />
           <label>ABV%</label>
+          <br/>
           <input
             style={inputStyle}
             type="number"
@@ -77,6 +81,7 @@ function UpdateTap(props) {
             defaultValue={props.tap.abv}/>
           <br />
           <label>Description</label>
+          <br/>
           <textarea
             style={inputStyle}
             name="description"
@@ -84,6 +89,7 @@ function UpdateTap(props) {
             defaultValue={props.tap.description}/>
           <br />
           <label>Total Pints left in the Keg</label>
+          <br/>
           <input
             style={inputStyle}
             type="number"
